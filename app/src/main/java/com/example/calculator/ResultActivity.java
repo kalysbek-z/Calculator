@@ -15,8 +15,8 @@ public class ResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
         result = (TextView) findViewById(R.id.resultText);
-        int res = getIntent().getIntExtra("result", 0);
-        result.setText(Integer.toString(res));
+        double res = getIntent().getDoubleExtra("result", 0);
+        result.setText(Double.toString(res));
 
     }
 }

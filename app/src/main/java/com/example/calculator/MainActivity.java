@@ -29,29 +29,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         init();
-//        if (savedInstanceState != null) {
-//            number1.setText(Integer.parseInt(String.valueOf(strNum1)));
-//            number2.setText(Integer.parseInt(String.valueOf(strNum2)));
-//            number1.setText("4");
-//        }
     }
-
-//    @Override
-//    public void onSaveInstanceState(@NonNull Bundle savedInstanceState) {
-//        super.onSaveInstanceState(savedInstanceState);
-//        strNum1 = Integer.parseInt(number1.getText().toString());
-//        strNum2 = Integer.parseInt(number2.getText().toString());
-//        savedInstanceState.putInt("num1", strNum1);
-//        savedInstanceState.putInt("num2", strNum2);
-//    }
 
     public void addButtonClick(View view) {
         if (number1.getText().toString().isEmpty() || number2.getText().toString().isEmpty()) {
             Toast.makeText(MainActivity.this, "Empty fields!", Toast.LENGTH_SHORT).show();
         } else {
-            int num1 = Integer.parseInt(number1.getText().toString());
-            int num2 = Integer.parseInt(number2.getText().toString());
-            int res = num1 + num2;
+            double num1 = Integer.parseInt(number1.getText().toString());
+            double num2 = Integer.parseInt(number2.getText().toString());
+            double res = num1 + num2;
             Intent intent = new Intent(this, ResultActivity.class);
             intent.putExtra("result", res);
             startActivity(intent);
@@ -62,9 +48,9 @@ public class MainActivity extends AppCompatActivity {
         if (number1.getText().toString().isEmpty() || number2.getText().toString().isEmpty()) {
             Toast.makeText(MainActivity.this, "Empty fields!", Toast.LENGTH_SHORT).show();
         } else {
-            int num1 = Integer.parseInt(number1.getText().toString());
-            int num2 = Integer.parseInt(number2.getText().toString());
-            int res = num1 - num2;
+            double num1 = Integer.parseInt(number1.getText().toString());
+            double num2 = Integer.parseInt(number2.getText().toString());
+            double res = num1 - num2;
             Intent intent = new Intent(this, ResultActivity.class);
             intent.putExtra("result", res);
             startActivity(intent);
@@ -88,12 +74,12 @@ public class MainActivity extends AppCompatActivity {
         if (number1.getText().toString().isEmpty() || number2.getText().toString().isEmpty()) {
             Toast.makeText(MainActivity.this, "Empty fields!", Toast.LENGTH_SHORT).show();
         } else {
-            int num1 = Integer.parseInt(number1.getText().toString());
-            int num2 = Integer.parseInt(number2.getText().toString());
+            double num1 = Integer.parseInt(number1.getText().toString());
+            double num2 = Integer.parseInt(number2.getText().toString());
             if (num2 == 0) {
                 Toast.makeText(MainActivity.this, "You can't divide by Zero!", Toast.LENGTH_SHORT).show();
             } else {
-                int res = num1 / num2;
+                double res = num1 / num2;
                 Intent intent = new Intent(this, ResultActivity.class);
                 intent.putExtra("result", res);
                 startActivity(intent);
